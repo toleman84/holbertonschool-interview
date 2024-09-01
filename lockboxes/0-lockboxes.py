@@ -2,6 +2,7 @@
 """0. Lockboxes
 """
 
+
 def canUnlockAll(boxes):
     """Determine if all boxes can be unlocked.
 
