@@ -1,6 +1,16 @@
 #!/usr/bin/python3
+"""0. Lockboxes
+"""
 
 def canUnlockAll(boxes):
+    """documentation
+
+    Args:
+        boxes (list): is a list of lists
+
+    Returns:
+        boolean: Return True if all boxes can be opened, else return False
+    """
     n = len(boxes)
     unLockBoxes = [0]
 
