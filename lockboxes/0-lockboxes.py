@@ -12,14 +12,15 @@ def canUnlockAll(boxes):
         boolean: Return True if all boxes can be opened, else return False
     """
     n = len(boxes)
-    unLockBoxes = [0]
+    unLockBoxes = [False] * n
+    keys = boxes[0]
 
-    for k, v in enumerate(boxes):
-        for key in v:
-            if key not in unLockBoxes and key != k:
-                unLockBoxes.append(key)
+    for key in keys:
+        if key < n and not unLockBoxes[key]:
+            unLockBoxes[key] = True
+            keys.extend(boxes[key])
 
-    if len(unLockBoxes) == n:
-        return True
-    else:
-        return False
+    for i in range(1, n):
+        if not unLockBoxes[i]:
+            return False
+    return True
